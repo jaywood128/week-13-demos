@@ -1,8 +1,10 @@
 import { useState } from "react";
+import React from "react";
 
 const Post = () => {
   // Returns a stateful value (isLiked), and a function (setIsLiked) to update it.
-  // const [, ] = useState(false);
+
+  const [isLiked, setIsLiked] = useState(false);
 
   //   <span role="img" aria-label="thumbs-up">
   //   👍
@@ -15,8 +17,17 @@ const Post = () => {
       <h1>My Post</h1>
       <p>Today's post is about ...</p>
 
-      <button>Like me</button>
-      {/* {Add JSX} */}
+      <button
+        onClick={(e) => setIsLiked(!isLiked)}
+        style={{ backgroundColor: "blue" }}
+      >
+        Like me
+      </button>
+      {isLiked ? (
+        <span role='img' aria-label='thumbs-up'>
+          👍{" "}
+        </span>
+      ) : null}
     </div>
   );
 };

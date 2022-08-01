@@ -19,6 +19,10 @@ const useForm = (intialValues) => {
         console.log(`Inside useForm ${e.target.value}`);
         setValues({ ...values, [e.target.name]: !values.checkbox });
       }
+      if (e.type === "change") {
+        console.log(`Inside useForm change ${e.target.value}`);
+        setValues({ ...values, [e.target.name]: e.target.value });
+      }
     },
   ];
 };
